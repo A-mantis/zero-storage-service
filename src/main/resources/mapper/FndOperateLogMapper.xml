@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zero.storage.dao.FndOperateLogMapper">
+    <resultMap id="BaseResultMap" type="com.zero.storage.model.FndOperateLog">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="operate_by" jdbcType="VARCHAR" property="operateBy"/>
+        <result column="operate_time" jdbcType="TIMESTAMP" property="operateTime"/>
+        <result column="operate_type" jdbcType="VARCHAR" property="operateType"/>
+        <result column="log_content" jdbcType="VARCHAR" property="logContent"/>
+        <result column="ext_content" jdbcType="VARCHAR" property="extContent"/>
+        <result column="fun_id" jdbcType="BIGINT" property="funId"/>
+        <result column="fun_name" jdbcType="VARCHAR" property="funName"/>
+        <result column="result" jdbcType="VARCHAR" property="result"/>
+        <result column="deleted" jdbcType="TINYINT" property="deleted"/>
+        <result column="created_by" jdbcType="VARCHAR" property="createdBy"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updated_by" jdbcType="VARCHAR" property="updatedBy"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+</mapper>

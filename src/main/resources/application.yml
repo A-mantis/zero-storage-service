@@ -1,0 +1,46 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /storage
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.100.81.222:3306/storage?useUnicode=true&characterEncoding=UTF-8&verifyServerCertificate=false&serverTimezone=GMT%2B8&useSSL=false&allowMultiQueries=true
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5 #初始化时建立物理连接的个数
+      min-idle: 5 #最小连接池数量
+      max-active: 10 #最大连接池数量
+      max-wait: 60000 #获取连接时最大等待时间
+      filter:
+        stat:
+          log-slow-sql: true # 开启慢查询记录
+          slow-sql-millis: 1000 # 慢SQL的标准，单位：毫秒
+  application:
+    name: ZERO-STORAGE-SERVICE
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  assist:
+    security:
+      open: true
+      public-filter:
+      mode: JWK
+      authorization-header: token
+    swagger:
+      enable: true
+      env: dev
+      name: a
+      email: b
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
